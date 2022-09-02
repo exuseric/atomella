@@ -1,0 +1,18 @@
+@use '../functions' as *;
+
+$navigation-height: rem(72);
+
+// Spacing
+$spacer-xs: rem(4);
+$spacer-sm: rem(8);
+$spacer-md: rem(16);
+$spacer-lg: rem(32);
+$spacer-xl: rem(56);
+$spacer-2xl: rem(112);
+
+// Transitions
+$transition: 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+// Border Radius
+$round-sm: rem(8);
+$round-lg: rem(16);

@@ -1,0 +1,117 @@
+@use 'variables' as *;
+
+// Set Font Size and Line height.
+@mixin font($element) {
+  font-size: map-get($map: $scale, $key: $element);
+  line-height: map-get($map: $line-height, $key: $element);
+}
+
+/******  COLOR PROFILES  ******/
+@mixin frosted-glass($color) {
+  @supports (backdrop-filter: blur()) {
+    backdrop-filter: blur(25px);
+    background-color: transparentize($color: $color, $amount: 0.75);
+  }
+}
+
+// MEDIA COLOR SCHEME CHANGE
+@mixin light-theme() {
+  @media (prefers-color-scheme: light) {
+    @content;
+  }
+}
+
+@mixin dark-theme() {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}
+/******  END OF COLOR PROFILES  ******/
+
+/******  MEDIA QUERY  ******/
+@mixin screen($size) {
+  @media only screen and (min-width: map-get($breakpoint, $size)) {
+    @content;
+  }
+}
+
+@mixin screen-up($size) {
+  @media only screen and (max-width: map-get($breakpoint-up, $size)) {
+    @content;
+  }
+}
+@mixin screen-min-max($max, $min) {
+  @media only screen and (max-width: map-get($breakpoint-up, $max)) and (min-width: map-get($breakpoint-up, $min)) {
+    @content;
+  }
+}
+/****** END OF MEDIA QUERY ******/
+
+/******  GRID AND FLEXBOX  ******/
+@mixin flex-wrap-col {
+  display: flex;
+  flex-flow: column wrap;
+  justify-items: center;
+}
+@mixin flex-wrap-row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-items: center;
+}
+
+@mixin grid-flow-col {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin grid-flow-row {
+  display: grid;
+  grid-auto-flow: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/******  END OF GRID AND FLEXBOX  ******/
+
+/*****  MEDIA SCROLLER  *****/
+@mixin media-scroller-X($column-width) {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: $column-width;
+  gap: $spacer-md;
+
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+
+  scroll-snap-type: inline mandatory;
+  scroll-padding-inline: $spacer-sm;
+
+  & > * {
+    scroll-snap-align: start;
+  }
+}
+
+@mixin media-scroller-y($row-height) {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: $row-height;
+  gap: $spacer-md;
+
+  overflow-y: auto;
+  overscroll-behavior-block: contain;
+
+  scroll-snap-type: block mandatory;
+  scroll-padding-block: $spacer-sm;
+
+  & > * {
+    scroll-snap-align: start;
+  }
+}
+/******  END OF MEDIA SCROLLER  ******/

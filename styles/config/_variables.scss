@@ -1,0 +1,108 @@
+@use 'functions' as *;
+
+/******  COLOR VARIABLES  ******/
+$primary-50: hsl(0, 67%, 85%);
+$primary-500: hsl(0, 60%, 40%);
+$primary-900: hsl(0, 60%, 10%);
+
+$white: hsl(340, 60%, 99%);
+$light-gray: hsl(0 23% 95%);
+$mid-gray: hsl(0, 8%, 50%);
+$mid-gray--darker: hsl(0, 7%, 25%);
+$dark-gray: hsl(0, 7%, 20%);
+$dark-gray--darker: hsl(0, 13%, 10%);
+$black: hsl(0, 60%, 2%);
+
+$green-50: hsl(76, 67%, 85%);
+$green-500: hsl(76, 60%, 40%);
+$green-900: hsl(76, 60%, 10%);
+
+$blue-50: hsl(220, 67%, 85%);
+$blue-500: hsl(220, 60%, 40%);
+$blue-900: hsl(220, 60%, 10%);
+
+$red-50: hsl(350, 67%, 85%);
+$red-500: hsl(350, 60%, 40%);
+$red-900: hsl(350, 60%, 10%);
+/******  END OF COLOR VARIABLES  ******/
+
+/******  FONT VARIABLES  ******/
+$display-family: 'Ms Madi', cursive;
+$heading-family: 'Fjalla One', Impact, Haettenschweiler, 'Arial Narrow Bold',
+  sans-serif;
+
+$body-family: 'Work Sans', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+  'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+// Typography Scale
+$scale: (
+  '5xl': rem(80),
+  '4xl': rem(56),
+  '3xl': rem(24),
+  '2xl': rem(24),
+  'xl': rem(18),
+  'lg': rem(16),
+  'sm': 1rem,
+  'xs': rem(12),
+);
+
+$line-height: (
+  '5xl': rem(80),
+  '4xl': rem(64),
+  '3xl': rem(36),
+  '2xl': rem(36),
+  'xl': rem(28),
+  'lg': rem(24),
+  'sm': rem(24),
+  'xs': rem(24),
+);
+
+/******  END OF FONT VARIABLES  ******/
+
+/******  MEDIA BREAKPOINTS  ******/
+$breakpoint: (
+  //640px
+  small: 40em,
+  //1024px
+  medium: 64em,
+  //1440px
+  large: 90em,
+  //1920px
+  xlarge: 120em
+);
+
+$breakpoint-up: (
+  small: 39.98em,
+  medium: 63.98em,
+  large: 89.98em,
+  xlarge: 119.98em,
+);
+/******  END OF MEDIA BREAKPOINTS  ******/
+
+/******  PADDINGS AND MARGINS ******/
+
+$spacer-xs: rem(4);
+$spacer-sm: rem(8);
+$spacer-md: rem(16);
+$spacer-lg: rem(32);
+$spacer-xl: rem(80);
+
+$section-margin: rem(120);
+
+/******  END OF PADDINGS AND MARGINS ******/
+
+$transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+
+/******  BOX SHADOW ******/
+$box-shadow--small: 0px 2px 4px 0
+  transparentize(
+    $color: $black,
+    $amount: 0.15,
+  );
+
+$box-shadow--large: 0px 8px 20px 0
+  transparentize(
+    $color: $black,
+    $amount: 0.06,
+  );
+/******  END OF BOX SHADOW ******/

@@ -1,0 +1,117 @@
+@use 'partials' as *;
+
+// .card {
+//   @include bg-main;
+//   // min-height: rem(420);
+//   border-radius: $round-lg;
+//   overflow: hidden;
+
+//   .cover {
+//     width: 100%;
+//     height: rem(500);
+//     overflow: hidden;
+//     // border-radius: $round-lg;
+//   }
+
+//   .body {
+//     // padding: $spacer-xl;
+//     // margin: $spacer-lg;
+//     margin: $spacer-xl;
+//   }
+
+//   .header {
+//     @include grid-flow-col;
+//     align-items: center;
+//     padding-bottom: $spacer-lg;
+
+//     .heading {
+//       @include font(h5);
+
+//       & > * {
+//         text-decoration: none;
+//       }
+//     }
+//   }
+// }
+
+// .card {
+//   position: relative;
+//   isolation: isolate;
+//   z-index: 1;
+//   // @include grid-flow-col;
+//   background-color: transparent;
+//   border-radius: 0;
+//   // border: 2px solid red;
+
+//   .cover {
+//     // width: rem(500);
+//     width: inherit;
+//     height: rem(500);
+//     margin: auto;
+
+//     // border-radius: $round-lg;
+//   }
+
+//   .body {
+//     z-index: 2;
+//     width: rem(500);
+//     padding: $spacer-xl;
+//     margin-inline: $spacer-xl;
+//     margin-top: -$spacer-xl;
+//     @include bg-main;
+//     border-radius: $round-sm;
+//   }
+
+//   .header {
+//     @include grid-flow-col;
+//     align-items: center;
+//     padding-bottom: $spacer-lg;
+
+//     .heading {
+//       @include font(h5);
+
+//       & > * {
+//         text-decoration: none;
+//       }
+//     }
+//   }
+// }
+
+// .card {
+//   max-width: rem(600);
+//   max-height: rem(600);
+
+//   display: grid;
+//   grid-template-columns: repeat(12, 1fr);
+//   grid-template-rows: repeat(12, 1fr);
+
+//   .cover {
+//     grid-column: 1 / -1;
+//     grid-row: 1 / -1;
+//   }
+
+//   .body {
+//     grid-column: 2 / -2;
+//     grid-row: 4 / -4;
+//     z-index: 2;
+
+//     padding: $spacer-xl;
+//     border-radius: $round-lg;
+
+//     @include frosted;
+//   }
+
+//   .header {
+//     @include grid-flow-col;
+//     align-items: center;
+//     padding-bottom: $spacer-lg;
+
+//     .heading {
+//       @include font(h2);
+
+//       & > * {
+//         text-decoration: none;
+//       }
+//     }
+//   }
+// }

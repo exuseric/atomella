@@ -1,0 +1,95 @@
+@use '../functions' as *;
+
+@mixin grid-center {
+  display: grid;
+  place-content: center;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin container-grid {
+  max-width: rem(750);
+  margin: auto;
+
+  display: grid;
+  grid-auto-rows: auto;
+  grid-auto-flow: dense;
+  grid-template-columns: repeat(6, 1fr);
+  gap: rem(4);
+
+  @include screen('medium') {
+    max-width: rem(1400);
+    margin: auto;
+
+    display: grid;
+    grid-auto-rows: auto;
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(12, rem(78));
+    gap: rem(8);
+  }
+
+  @include screen('large') {
+    max-width: rem(1440);
+    margin: auto;
+
+    display: grid;
+    grid-auto-rows: auto;
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(12, rem(109));
+    gap: rem(12);
+  }
+
+  @include screen('x-large') {
+    max-width: rem(1750);
+
+    display: grid;
+    grid-auto-rows: auto;
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(12, rem(144));
+    gap: rem(2);
+  }
+}
+
+@mixin flex-wrap-col {
+  display: flex;
+  flex-flow: column wrap;
+  justify-items: center;
+}
+
+@mixin flex-wrap-row {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+@mixin grid-flow-col {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+}
+
+@mixin grid-flow-row {
+  display: grid;
+  grid-auto-flow: row;
+  align-items: center;
+}
+
+@mixin media-scroller($column-width) {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: $column-width;
+  gap: rem(56);
+
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+
+  scroll-snap-type: inline mandatory;
+  scroll-padding-inline: rem(16);
+
+  & > * {
+    scroll-snap-align: start;
+  }
+}

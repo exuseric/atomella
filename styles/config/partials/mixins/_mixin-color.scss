@@ -1,0 +1,128 @@
+@use '../variables/' as *;
+@use '../functions/' as *;
+
+$frosted-blur: 50px;
+$frosted-opacity: 0.75;
+
+@mixin frosted-glass($color) {
+  background-color: $color;
+  @supports (backdrop-filter: blur()) {
+    background-color: transparentize($color: $color, $amount: 0.75);
+    backdrop-filter: blur(20px);
+    border: 2px solid transparentize($color: $color, $amount: 0.9);
+  }
+}
+
+@mixin frosted {
+  background-color: $black;
+  @supports (backdrop-filter: blur()) {
+    background-color: transparentize($color: $black, $amount: $frosted-opacity);
+    backdrop-filter: blur($frosted-blur);
+    border: 2px solid transparentize($color: $black, $amount: 0.9);
+  }
+
+  @include light-theme {
+    background-color: $white;
+    @supports (backdrop-filter: blur()) {
+      background-color: transparentize(
+        $color: $white,
+        $amount: $frosted-opacity
+      );
+      backdrop-filter: blur($frosted-blur);
+      border: 2px solid transparentize($color: $white, $amount: 0.9);
+    }
+  }
+}
+
+@mixin light-theme {
+  @media (prefers-color-scheme: light) {
+    @content;
+  }
+}
+
+@mixin dark-theme {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}
+
+@mixin link-color {
+  color: inherit;
+
+  &:focus-visible {
+    @include text-color('info', '900');
+    @include bg-color('info', '500');
+    outline-color: currentColor;
+  }
+
+  &:hover {
+    @include text-color('info', '900');
+    @include bg-color('info', '500');
+    outline-color: currentColor;
+  }
+}
+/*  TEXT COLORS  */
+@mixin text-main {
+  color: $light-gray;
+
+  @include light-theme {
+    color: $dark-gray;
+  }
+}
+
+@mixin text-dark {
+  color: $dark-gray;
+}
+
+@mixin text-light {
+  color: $light-gray;
+}
+
+@mixin text-color($hue, $value) {
+  color: color($h: $hue, $l: $value, $light: 'false');
+
+  @include light-theme {
+    color: color($h: $hue, $l: $value, $light: 'true');
+  }
+}
+
+/*  END OF TEXT COLORS  */
+
+/* BACKGROUND COLORS */
+
+@mixin bg-main {
+  color: $dark-gray;
+  background-color: $white;
+
+  @include dark-theme {
+    color: $light-gray;
+    background-color: $black;
+  }
+}
+
+@mixin bg-dark {
+  color: $light-gray;
+  background-color: $black;
+}
+
+@mixin bg-light {
+  color: $dark-gray;
+  background-color: $white;
+}
+
+@mixin bg-color($hue, $value) {
+  background-color: color($h: $hue, $l: $value, $light: 'false');
+
+  @include light-theme {
+    background-color: color($h: $hue, $l: $value, $light: 'true');
+  }
+}
+
+/* END OF BACKGROUND COLORS */
+
+@mixin bg-image($image) {
+  background-image: url($image);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

@@ -1,0 +1,6 @@
+@use '../variables/variable-font' as *;
+
+@mixin font($element) {
+  font-size: map-get($map: $scale, $key: $element);
+  line-height: map-get($map: $line-height, $key: $element);
+}

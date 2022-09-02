@@ -1,0 +1,30 @@
+$lightness: (
+  '50': 95%,
+  '500': 31%,
+  '900': 5%,
+);
+
+$hue: (
+  'primary': 341,
+  'secondary': 88,
+  'danger': 0,
+  'caution': 50,
+  'success': 100,
+  'info': 220,
+);
+
+@function color($light, $l, $h) {
+  @if $light == 'true' {
+    @return hsl(
+      map-get($map: $hue, $key: $h),
+      36%,
+      map-get($map: $lightness, $key: $l)
+    );
+  } @else {
+    @return hsl(
+      map-get($map: $hue, $key: $h),
+      36%,
+      map-get($map: $lightness, $key: $l)
+    );
+  }
+}

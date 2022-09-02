@@ -1,0 +1,107 @@
+@use 'partials' as *;
+
+.button {
+  width: fit-content;
+  min-height: rem(40);
+
+  font-weight: 600;
+  @include font('body-lg');
+
+  text-decoration: none;
+  text-transform: capitalize;
+
+  padding: rem(16) rem(24);
+
+  border: 2px solid transparent;
+  border-radius: $round-sm;
+
+  transition: all $transition;
+
+  cursor: pointer;
+
+  .icon {
+    display: grid;
+    place-content: center;
+    font-size: rem(24);
+  }
+
+  &:hover,
+  &:focus {
+    @include text-color('info', '50');
+    @include bg-color('info', '500');
+    border-color: currentColor;
+    outline-color: currentColor;
+  }
+
+  &--main {
+    @include bg-color('primary', '500');
+  }
+  &--secondary {
+    @include bg-color('secondary', '500');
+  }
+  &--dark {
+    @include bg-dark;
+  }
+  &--light {
+    @include bg-light;
+  }
+  &--success {
+    @include text-color('success', '900');
+    @include bg-color('success', '500');
+  }
+  &--danger {
+    @include text-color('danger', '900');
+    @include bg-color('danger', '500');
+  }
+  &--caution {
+    @include text-color('caution', '900');
+    @include bg-color('caution', '500');
+  }
+
+  &--center {
+    @include grid-center;
+    width: rem(40);
+    height: rem(40);
+    padding: $spacer-sm;
+  }
+  &--pill {
+    padding: $spacer-xs $spacer-md;
+    border-radius: rem(30);
+  }
+
+  &--round {
+    @include grid-center;
+
+    width: rem(40);
+    height: rem(40);
+
+    padding: 0;
+    border-radius: 50%;
+  }
+
+  &--outline {
+    color: inherit;
+    background-color: transparent;
+    border-color: currentColor;
+  }
+
+  &--transparent {
+    background-color: transparent;
+  }
+
+  &--icon {
+    display: grid;
+    grid-auto-flow: column;
+    gap: $spacer-xs;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &--frosted {
+    @include frosted-glass($mid-gray);
+  }
+
+  &--small {
+    padding: rem(4) rem(8);
+  }
+}
