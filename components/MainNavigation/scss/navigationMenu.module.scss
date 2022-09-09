@@ -1,0 +1,31 @@
+.menu {
+  // position: absolute;
+  // top: 100%;
+  box-shadow: $box-shadow--small;
+  li {
+    transition: $transition;
+  }
+
+  &__links {
+    @include grid-flow-row;
+    align-items: center;
+    gap: $spacer-md;
+
+    list-style-type: none;
+    padding-inline: 0;
+
+    @include screen('tablet') {
+      @include flex-wrap-row;
+      gap: $spacer-sm;
+      padding: 0;
+    }
+  }
+
+  &__link {
+    display: flex;
+    @include font('body-lg');
+    text-transform: capitalize;
+    padding: $spacer-md $spacer-sm;
+    width: 100%;
+  }
+}

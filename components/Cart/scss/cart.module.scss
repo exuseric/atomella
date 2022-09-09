@@ -1,0 +1,24 @@
+.toggle {
+  &--open {
+    position: relative;
+    isolation: isolate;
+
+    .count {
+      @include grid-center;
+      position: absolute;
+      top: 20%;
+      right: -50%;
+      transform: translate(-50%, -50%);
+
+      min-width: rem(24);
+      height: rem(24);
+      border-radius: $round-lg;
+
+      @include font('body-sm');
+
+      @include bg-color('primary', '500');
+      @include text-color('primary', '50');
+      border: 2px solid currentColor;
+    }
+  }
+}
