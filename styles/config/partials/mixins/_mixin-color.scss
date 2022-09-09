@@ -50,13 +50,13 @@ $frosted-opacity: 0.75;
   color: inherit;
 
   &:focus-visible {
-    @include text-color('info', '900');
+    @include text-color('info', '50');
     @include bg-color('info', '500');
     outline-color: currentColor;
   }
 
   &:hover {
-    @include text-color('info', '900');
+    @include text-color('info', '50');
     @include bg-color('info', '500');
     outline-color: currentColor;
   }

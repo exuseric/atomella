@@ -61,14 +61,39 @@ a:not([class]) {
 .link {
   font-weight: 600;
   text-decoration: none;
-  padding: $spacer-xs $spacer-sm;
+  padding: $spacer-sm $spacer-md;
   transition: all $transition;
   border-radius: $round-sm;
   @include link-color;
 
   &--icon {
     @include grid-flow-col;
-    gap: $spacer-xs;
+    gap: $spacer-sm;
     align-items: center;
+    justify-content: space-between;
+  }
+
+  &--small {
+    padding: $spacer-sm;
+  }
+
+  &--inline {
+    @include text-color('primary', '500');
+    padding: 0;
+    background: transparent;
+    border-bottom: 2px solid currentColor;
+    border-radius: 0;
+
+    &:focus-visible {
+      @include text-color('info', '500');
+      outline-color: currentColor;
+      background-color: transparent;
+    }
+
+    &:hover {
+      @include text-color('info', '500');
+      outline-color: currentColor;
+      background-color: transparent;
+    }
   }
 }

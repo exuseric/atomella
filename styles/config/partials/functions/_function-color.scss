@@ -3,6 +3,11 @@ $lightness: (
   '500': 31%,
   '900': 5%,
 );
+$d-lightness: (
+  '50': 95%,
+  '500': 51%,
+  '900': 5%,
+);
 
 $hue: (
   'primary': 341,
@@ -17,14 +22,14 @@ $hue: (
   @if $light == 'true' {
     @return hsl(
       map-get($map: $hue, $key: $h),
-      36%,
+      65%,
       map-get($map: $lightness, $key: $l)
     );
   } @else {
     @return hsl(
       map-get($map: $hue, $key: $h),
-      36%,
-      map-get($map: $lightness, $key: $l)
+      65%,
+      map-get($map: $d-lightness, $key: $l)
     );
   }
 }
