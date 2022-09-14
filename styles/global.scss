@@ -78,22 +78,13 @@ a:not([class]) {
   }
 
   &--inline {
-    @include text-color('primary', '500');
-    padding: 0;
-    background: transparent;
-    border-bottom: 2px solid currentColor;
-    border-radius: 0;
+    padding: rem(4) rem(8);
+    text-decoration: underline;
+    text-decoration-color: currentColor;
+    text-decoration-style: dashed;
+  }
 
-    &:focus-visible {
-      @include text-color('info', '500');
-      outline-color: currentColor;
-      background-color: transparent;
-    }
-
-    &:hover {
-      @include text-color('info', '500');
-      outline-color: currentColor;
-      background-color: transparent;
-    }
+  &--main {
+    @include bg-color('primary', '500');
   }
 }
