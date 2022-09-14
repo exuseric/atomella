@@ -4,8 +4,8 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   sassOptions: {
-    additionalData: `@use './styles/config/partials/_index.scss' as *;`
-  }
-}
+    additionalData: `@use './styles/config/partials/_index.scss' as *;`,
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
