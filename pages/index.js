@@ -6,7 +6,6 @@ export default function Home() {
     <DefaultLayout>
       <main className="home">
         <HeroSection />
-        <section className={`section`}>{/* Content */}</section>
       </main>
     </DefaultLayout>
   );
