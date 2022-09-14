@@ -5,7 +5,7 @@ export default function Atomella() {
       height="1em"
       viewBox="0 0 343.46846 343.9513"
       xmlns="http://www.w3.org/2000/svg"
-      role="image"
+      role="img"
       aria-hidden="true"
       fill="currentColor">
       <g
