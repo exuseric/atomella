@@ -54,10 +54,11 @@
   }
 }
 
-@mixin flex-wrap-col {
+@mixin flex-column {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   justify-items: center;
+  align-items: flex-start;
 }
 
 @mixin flex-wrap-row {
@@ -77,17 +78,33 @@
   align-items: center;
 }
 
-@mixin media-scroller($column-width) {
+@mixin media-scroller($col-width, $gap, $padding) {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: $column-width;
-  gap: rem(56);
+  grid-auto-columns: $col-width;
+  gap: $gap;
 
   overflow-x: auto;
   overscroll-behavior-inline: contain;
 
   scroll-snap-type: inline mandatory;
-  scroll-padding-inline: rem(16);
+  scroll-padding-inline: $padding;
+
+  & > * {
+    scroll-snap-align: start;
+  }
+}
+@mixin media-scroller-y($col-width, $gap, $padding) {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-columns: $col-width;
+  gap: $gap;
+
+  overflow-y: auto;
+  overscroll-behavior-block: contain;
+
+  scroll-snap-type: inline mandatory;
+  scroll-padding-block: $padding;
 
   & > * {
     scroll-snap-align: start;
