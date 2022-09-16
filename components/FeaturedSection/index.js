@@ -6,42 +6,48 @@ import productImage from '/assets/img/tee-transformed (1).png';
 
 const featured = {
   title: 'Unbowed',
+  slug: 'unbowed',
   description:
     "Celebrating the strength, resilience and determination of women across the centuries fighting against injustice and discrimination and championing equality in all it's form.",
-  callToAction: {
-    title: 'View products',
-    link: '/products/collection?collection=unbowed',
+  model: {
+    title: 'Model wearing unbowed t-shirt',
+    cover: {
+      url: modelImage,
+      alternativeText: 'model wearing atomella design',
+    },
   },
-  modelImage: {
-    title: 'model image',
-    slug: '/products/collection?collection=unbowed',
-    url: modelImage,
-    alternativeText: 'model wearing atomella design',
-  },
-  productImage: [
+  products: [
     {
-      title: 'product',
-      slug: 'products/collection/?collection=unbowed&type=t-shirt',
-      url: productImage,
-      alternativeText: 'product',
+      title: 'unbowed unisex t-shirt',
+      slug: 'unbowed-unisex-t-shirt',
+      cover: {
+        url: productImage,
+        alternativeText: 'product',
+      },
     },
     {
-      title: 'product',
-      slug: 'products/collection/?collection=unbowed&type=t-shirt',
-      url: productImage,
-      alternativeText: 'product',
+      title: 'unbowed unisex t-shirt',
+      slug: 'unbowed-unisex-t-shirt',
+      cover: {
+        url: productImage,
+        alternativeText: 'product',
+      },
     },
     {
-      title: 'product',
-      slug: 'products/collection/?collection=unbowed&type=t-shirt',
-      url: productImage,
-      alternativeText: 'product',
+      title: 'unbowed unisex t-shirt',
+      slug: 'unbowed-unisex-t-shirt',
+      cover: {
+        url: productImage,
+        alternativeText: 'product',
+      },
     },
     {
-      title: 'product',
-      slug: 'products/collection/?collection=unbowed&type=t-shirt',
-      url: productImage,
-      alternativeText: 'product',
+      title: 'unbowed unisex t-shirt',
+      slug: 'unbowed-unisex-t-shirt',
+      cover: {
+        url: productImage,
+        alternativeText: 'product',
+      },
     },
   ],
 };
@@ -54,44 +60,41 @@ export default function FeaturedSection() {
           <h2 className={s.header__title}>{featured.title}</h2>
           <p className={s.header__description}>{featured.description}</p>
         </div>
-        <Link href={featured.callToAction.link}>
-          <a className={`link ${s.header__link}`}>
-            {featured.callToAction.title}
-          </a>
+        <Link href={`/collection/${featured.slug}`}>
+          <a className={`link ${s.header__link}`}>View Collection</a>
         </Link>
       </header>
 
       <div className="container">
         <article className={s['product-grid']}>
-          <Link href={featured.modelImage.slug}>
+          <Link href={`/collection/${featured.slug}`}>
             <a className={`${s['product-card']} ${s['product-card--large']}`}>
               <Image
-                alt="model"
-                src={featured.modelImage.url}
+                src={featured.model.cover.url}
+                alt={featured.model.cover.alternativeText}
                 layout="fill"
                 objectFit="cover"
                 objectPosition="center"
               />
-              <span className="sr-only">{featured.modelImage.title}</span>
+              <span className="sr-only">{featured.model.title}</span>
             </a>
           </Link>
-          {featured.productImage.map((img, idx) => (
+          {featured.products.map((product, idx) => (
             <Link
-              href={img.slug}
+              href={`/product/${product.slug}`}
               key={idx}>
               <a className={`${s['product-card']} ${s['product-card--small']}`}>
                 <Image
-                  alt={img.alternativeText}
-                  src={img.url}
+                  alt={product.cover.alternativeText}
+                  src={product.cover.url}
                   layout="fill"
                   objectFit="cover"
                   objectPosition="center"
                 />
-                <span className="sr-only">{img.title}</span>
+                <span className="sr-only">{product.title}</span>
               </a>
             </Link>
           ))}
-          <div className={s['product-grid--secondary']}></div>
         </article>
       </div>
     </section>
