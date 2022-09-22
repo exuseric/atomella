@@ -1,5 +1,6 @@
 import CartToggle from '../Cart/CartToggle';
 import Logo from '../Logo';
+import MegaMenu from './MegaMenu';
 import MenuToggle from './MenuToggle';
 import Menu from './NavigationMenu';
 import s from './scss/navigation.module.scss';
@@ -26,7 +27,7 @@ export default function MainNavigation() {
           <Menu />
         </div>
       </div>
-      {/* Mega Menu */}
+      {/* <MegaMenu /> */}
     </header>
   );
 }

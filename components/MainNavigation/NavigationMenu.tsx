@@ -14,7 +14,7 @@ const menuLinks = [
   { name: 'contact', route: '/contact', submenu: false },
 ];
 
-function toggleSubmenu() {
+function toggleMegaMenu() {
   // Logic
 }
 
@@ -30,9 +30,7 @@ export default function Menu() {
               className={`${s.submenu}`}>
               <button
                 className={`button button--small button--transparent button--icon ${s.menu__link}`}
-                href={link.route}
-                data-menu={link.menu}
-                onClick={toggleSubmenu}>
+                onClick={toggleMegaMenu}>
                 <span className="text">{link.name}</span>
                 <span className="icon">
                   <FiChevronDown />

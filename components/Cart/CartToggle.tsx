@@ -8,9 +8,7 @@ function toggleCart() {
 export default function CartToggle() {
   return (
     <button
-      className={`button button--transparent button--center ${
-        s[('toggle', 'toggle--open')]
-      }`}
+      className={`button button--transparent button--center ${s.toggle} ${s['toggle--open']}`}
       onClick={toggleCart}>
       <span className="icon">
         <FiShoppingCart />
